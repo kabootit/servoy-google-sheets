@@ -41,6 +41,7 @@ var animalsPost = function () {
 		
 	var client = plugins.http.createNewHttpClient();
 	var poster = client.createPostRequest(url + slug);
+    // NOTE: can't chain POST like you can GET for some reason.
 	poster.addHeader('Content-type', 'application/json')
 	poster.addParameter(null, JSON.stringify(values))
 	var response = poster.executeRequest()
